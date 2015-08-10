@@ -21,14 +21,9 @@
 </p>
 
 <p>
-  <strong>Confirmation token:</strong>
-  <%= @applicant.confirmation_token %>
-</p>
-
-<p>
   <strong>Address:</strong>
   <%= @applicant.address %>
 </p>
 
-<%= link_to 'Edit', edit_applicant_path(@applicant) %> |
-<%= link_to 'Back', applicants_path %>
+<%= link_to 'Editar', edit_applicant_path(@applicant) %> |
+<%= link_to 'Voltar', applicants_path %>

@@ -21,6 +21,7 @@ class ApplicantsController < ApplicationController
     @applicant = Applicant.new(applicant_params)
 
     if @applicant.save
+      @applicant.update_attribute(:expired, true)
       redirect_to @applicant, notice: 'Participante criado com sucesso.'
     else
       render :new
@@ -29,6 +30,7 @@ class ApplicantsController < ApplicationController
 
   def update
     if @applicant.update(applicant_params)
+      @applicant.update_attribute(:expired, true)
       redirect_to @applicant, notice: 'Participante alterado com sucesso.'
     else
       render :edit
@@ -54,6 +56,6 @@ class ApplicantsController < ApplicationController
     def validate_token
       @applicant = Applicant.where(confirmation_token: params[:token]).first
 
-      redirect_to applicants_path if @applicant.blank?
+      redirect_to applicants_path if @applicant.blank? || @applicant.expired?
     end
 end
