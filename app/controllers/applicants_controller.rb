@@ -1,48 +1,43 @@
+#encoding: utf-8
+
 class ApplicantsController < ApplicationController
   before_action :set_applicant, only: [:show, :edit, :update, :destroy]
+  before_action :validate_token, only: [:new]
 
-  # GET /applicants
   def index
     @applicants = Applicant.all
   end
 
-  # GET /applicants/1
   def show
   end
 
-  # GET /applicants/new
   def new
-    @applicant = Applicant.new
   end
 
-  # GET /applicants/1/edit
   def edit
   end
 
-  # POST /applicants
   def create
     @applicant = Applicant.new(applicant_params)
 
     if @applicant.save
-      redirect_to @applicant, notice: 'Applicant was successfully created.'
+      redirect_to @applicant, notice: 'Participante criado com sucesso.'
     else
       render :new
     end
   end
 
-  # PATCH/PUT /applicants/1
   def update
     if @applicant.update(applicant_params)
-      redirect_to @applicant, notice: 'Applicant was successfully updated.'
+      redirect_to @applicant, notice: 'Participante alterado com sucesso.'
     else
       render :edit
     end
   end
 
-  # DELETE /applicants/1
   def destroy
     @applicant.destroy
-    redirect_to applicants_url, notice: 'Applicant was successfully destroyed.'
+    redirect_to applicants_url, notice: 'Participante excluído.'
   end
 
   private
@@ -54,5 +49,11 @@ class ApplicantsController < ApplicationController
     # Only allow a trusted parameter "white list" through.
     def applicant_params
       params.require(:applicant).permit(:name, :email, :phone_1, :phone_2, :confirmation_token, :address)
+    end
+
+    def validate_token
+      @applicant = Applicant.where(confirmation_token: params[:token]).first
+
+      redirect_to applicants_path if @applicant.blank?
     end
 end

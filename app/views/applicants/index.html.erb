@@ -1,16 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Applicants</h1>
+<h1>Lista de participantes</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Name</th>
+      <th>Nome</th>
       <th>Email</th>
-      <th>Phone 1</th>
-      <th>Phone 2</th>
-      <th>Confirmation token</th>
-      <th>Address</th>
+      <th>Telefone primario</th>
+      <th>Telefone secundario</th>
+      <th>Inscrição manual</th>
+      <th>Endereço</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -22,16 +22,24 @@
         <td><%= applicant.email %></td>
         <td><%= applicant.phone_1 %></td>
         <td><%= applicant.phone_2 %></td>
-        <td><%= applicant.confirmation_token %></td>
+        <td>
+          <%= link_to "Inscrição manual", 
+                      "/new_applicant/#{applicant.confirmation_token}" %>
+        </td>
         <td><%= applicant.address %></td>
-        <td><%= link_to 'Show', applicant %></td>
-        <td><%= link_to 'Edit', edit_applicant_path(applicant) %></td>
-        <td><%= link_to 'Destroy', applicant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Exibir', applicant %></td>
+        <td><%= link_to 'Editar', edit_applicant_path(applicant) %></td>
+        <td>
+          <%= link_to 'Excluir', 
+            applicant, 
+            method: :delete, 
+            data: { confirm: 'Are you sure?' } %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
+<br />
 
-<%= link_to 'New Applicant', new_applicant_path %>
+<%= link_to 'Importar arquivo de emails', email_list_index_path %>

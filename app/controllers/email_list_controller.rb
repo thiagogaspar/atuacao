@@ -14,7 +14,7 @@ class EmailListController < ApplicationController
       end
     end
 
-    render nothing: true
+    redirect_to root_path
   end
 
   private

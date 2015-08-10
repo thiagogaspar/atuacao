@@ -12,7 +12,7 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
+    <%= f.label :name, "Nome" %><br>
     <%= f.text_field :name %>
   </div>
   <div class="field">
@@ -20,22 +20,18 @@
     <%= f.text_field :email %>
   </div>
   <div class="field">
-    <%= f.label :phone_1 %><br>
+    <%= f.label :phone_1, "Telefone primario" %><br>
     <%= f.text_field :phone_1 %>
   </div>
   <div class="field">
-    <%= f.label :phone_2 %><br>
+    <%= f.label :phone_2, "Telefone secundario" %><br>
     <%= f.text_field :phone_2 %>
   </div>
   <div class="field">
-    <%= f.label :confirmation_token %><br>
-    <%= f.text_field :confirmation_token %>
-  </div>
-  <div class="field">
-    <%= f.label :address %><br>
+    <%= f.label :address, "Endereço" %><br>
     <%= f.text_field :address %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Inscrever-me" %>
   </div>
 <% end %>
