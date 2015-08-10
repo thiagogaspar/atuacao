@@ -1,0 +1,5 @@
+<%= form_tag :send_mail, method: :post, multipart: :true do %>
+  <p><%= label_tag 'mail_file', "Arquivo com emails em csv:" %></p>
+  <p><%= file_field_tag 'mail_file', accept: "text/csv" %></p>
+  <p><%= submit_tag "Enviar" %></p>
+<% end %>
