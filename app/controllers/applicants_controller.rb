@@ -53,6 +53,6 @@ class ApplicantsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def applicant_params
-      params.require(:applicant).permit(:name, :email, :phone_1, :phone_2, :address)
+      params.require(:applicant).permit(:name, :email, :phone_1, :phone_2, :confirmation_token, :address)
     end
 end
