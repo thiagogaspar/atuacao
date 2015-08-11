@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Nome:</strong>
   <%= @applicant.name %>
 </p>
 
@@ -11,18 +11,23 @@
 </p>
 
 <p>
-  <strong>Phone 1:</strong>
+  <strong>Telefone primario:</strong>
   <%= @applicant.phone_1 %>
 </p>
 
 <p>
-  <strong>Phone 2:</strong>
+  <strong>Telefone secundario:</strong>
   <%= @applicant.phone_2 %>
 </p>
 
 <p>
-  <strong>Address:</strong>
+  <strong>Endereço:</strong>
   <%= @applicant.address %>
+</p>
+
+<p>
+  <strong>Confirmação:</strong>
+  <%= link_to "Baixar arquivo de confirmação", @applicant.confirm.url %>
 </p>
 
 <%= link_to 'Editar', edit_applicant_path(@applicant) %> |
