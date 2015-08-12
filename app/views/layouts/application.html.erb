@@ -7,8 +7,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <% if current_user %>
+    <p><%= link_to "Sair", "/logout" %></p>
+  <% end %>
 
-<%= yield %>
+  <%= yield %>
 
 </body>
 </html>

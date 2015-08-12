@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<h2>Bem vindo.</h2>
+
+<%= form_tag '/login' do %>
+  
+  <div class="field">
+    <%= label_tag :name, "Nome do usuário" %>
+    <%= text_field_tag :name %>
+  </div>
+
+  <div class="field">
+    <%= label_tag :password, "Senha" %>
+    <%= password_field_tag :password %>
+  </div>
+
+  <div class="actions">
+    <%= submit_tag "Entrar" %>
+  </div>
+
+<% end%>
+

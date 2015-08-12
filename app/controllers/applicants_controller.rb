@@ -3,6 +3,7 @@
 class ApplicantsController < ApplicationController
   before_action :set_applicant, only: [:show, :edit, :update, :destroy]
   before_action :validate_token, only: [:new]
+  before_action :authorize, only: [:index, :destroy]
 
   def index
     @applicants = Applicant.all
@@ -31,7 +32,7 @@ class ApplicantsController < ApplicationController
   def update
     if @applicant.update(applicant_params)
       @applicant.update_attribute(:expired, true)
-      redirect_to @applicant, notice: 'Participante alterado com sucesso.'
+      redirect_to @applicant, notice: 'Você foi cadastrado com sucesso.'
     else
       render :edit
     end
@@ -55,7 +56,9 @@ class ApplicantsController < ApplicationController
 
     def validate_token
       @applicant = Applicant.where(confirmation_token: params[:token]).first
-
-      redirect_to applicants_path if @applicant.blank? || @applicant.expired?
+      
+      if @applicant.blank? || @applicant.expired?
+        redirect_to "/login", notice: "Código de cadastro expirado."
+      end
     end
 end

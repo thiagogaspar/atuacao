@@ -1,6 +1,8 @@
-<h1>Editing Applicant</h1>
+<h1>Editar cadastro de participante</h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @applicant %> |
-<%= link_to 'Back', applicants_path %>
+<%= link_to 'Exibir', @applicant %> 
+<% if current_user %>
+  |<%= link_to 'Voltar', applicants_path %>
+<% end %>

@@ -11,28 +11,31 @@
     </div>
   <% end %>
 
+  <small>Os campos marcados com * são de preenchimente obrigatório</small>
+  <br />
+  <br />
   <div class="field">
-    <%= f.label :name, "Nome" %><br>
+    <%= f.label :name, "Nome*" %><br />
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :email %><br>
+    <%= f.label :email, "E-mail*" %><br />
     <%= f.text_field :email %>
   </div>
   <div class="field">
-    <%= f.label :phone_1, "Telefone primario" %><br>
+    <%= f.label :phone_1, "Telefone primario*" %><br />
     <%= f.text_field :phone_1 %>
   </div>
   <div class="field">
-    <%= f.label :phone_2, "Telefone secundario" %><br>
+    <%= f.label :phone_2, "Telefone secundario" %><br />
     <%= f.text_field :phone_2 %>
   </div>
   <div class="field">
-    <%= f.label :address, "Endereço" %><br>
+    <%= f.label :address, "Endereço*" %><br />
     <%= f.text_field :address %>
   </div>
   <div class="field">
-    <%= f.label :confirm, "Arquivo de confirmação" %><br>
+    <%= f.label :confirm, "Arquivo de confirmação*" %><br />
     <%= f.file_field :confirm %>
   </div>
   <div class="actions">

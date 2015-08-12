@@ -2,4 +2,6 @@
 
 <%= render 'form'%>
 
-<%= link_to 'Voltar', applicants_path %>
+<% if current_user %>
+  <%= link_to 'Voltar', applicants_path %>
+<% end %>
