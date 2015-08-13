@@ -8,13 +8,13 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'turbolinks'
-gem 'passenger'
 gem 'therubyracer', platforms: :ruby
 gem 'bcrypt'
 
 group :development, :test do
   gem 'web-console', '~> 2.0'
   gem 'spring'
+  gem 'passenger'
 end
 
 gem 'sqlite3', group: :test
