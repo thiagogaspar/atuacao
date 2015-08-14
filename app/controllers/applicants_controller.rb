@@ -3,7 +3,7 @@
 class ApplicantsController < ApplicationController
   before_action :set_applicant, only: [:show, :edit, :update, :destroy]
   before_action :validate_token, only: [:new]
-  before_action :authorize, only: [:index, :destroy]
+  before_action :authorize, only: [:index, :destroy, :show]
 
   def index
     @applicants = Applicant.all
