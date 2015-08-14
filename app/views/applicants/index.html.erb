@@ -27,7 +27,7 @@
         </td>
         <td><%= applicant.address %></td>
         <td><%= link_to 'Exibir', applicant %></td>
-        <td><%= link_to 'Editar', edit_applicant_path(applicant) %></td>
+        <td><%= link_to 'Editar', edit_applicant_url(applicant) %></td>
         <td>
           <%= link_to 'Excluir', applicant, method: :delete, 
             data: { confirm: 'Are you sure?' } %>

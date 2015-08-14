@@ -27,7 +27,7 @@
 
 <p>
   <strong>Confirmação:</strong>
-  <%= link_to "Baixar arquivo de confirmação", @applicant.confirm_url %>
+  <%= link_to "Baixar arquivo de confirmação", "/event_manager/#{@applicant.confirm_url} %>
 </p>
 
 <%= link_to 'Editar', edit_applicant_path(@applicant) %> 
