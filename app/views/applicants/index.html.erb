@@ -23,8 +23,7 @@
         <td><%= applicant.phone_1 %></td>
         <td><%= applicant.phone_2 %></td>
         <td>
-          <%= link_to "Inscrição manual", 
-                      "/new_applicant/#{applicant.confirmation_token}" %>
+          <%= link_to "Inscrição manual", new_applicant_url(applicant.confirmation_token) %>
         </td>
         <td><%= applicant.address %></td>
         <td><%= link_to 'Exibir', applicant %></td>
