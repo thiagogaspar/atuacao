@@ -7,6 +7,6 @@ Rails.application.routes.draw do
   get  "/login",  to: "sessions#new"
   post "/login",  to: "sessions#create"
   get  "/logout", to: "sessions#destroy"
-  get "new_applicant/:token", to: "applicants#new"
+  get "new_applicant/:token", to: "applicants#new", as: :new_applicant
   post :send_mail, to: "email_list#send_mail"
 end

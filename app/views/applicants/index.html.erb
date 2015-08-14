@@ -30,9 +30,7 @@
         <td><%= link_to 'Exibir', applicant %></td>
         <td><%= link_to 'Editar', edit_applicant_path(applicant) %></td>
         <td>
-          <%= link_to 'Excluir', 
-            applicant, 
-            method: :delete, 
+          <%= link_to 'Excluir', applicant, method: :delete, 
             data: { confirm: 'Are you sure?' } %>
         </td>
       </tr>
