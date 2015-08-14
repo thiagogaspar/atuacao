@@ -8,7 +8,7 @@
 </head>
 <body>
   <% if current_user %>
-    <p><%= link_to "Sair", "/logout" %></p>
+    <p><%= link_to "Sair", logout_url %></p>
   <% end %>
 
   <%= yield %>

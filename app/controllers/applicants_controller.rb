@@ -58,7 +58,7 @@ class ApplicantsController < ApplicationController
       @applicant = Applicant.where(confirmation_token: params[:token]).first
       
       if @applicant.blank? || @applicant.expired?
-        redirect_to "/login", notice: "Código de cadastro expirado."
+        redirect_to login_url, notice: "Código de cadastro expirado."
       end
     end
 end

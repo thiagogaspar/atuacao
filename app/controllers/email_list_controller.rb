@@ -14,7 +14,7 @@ class EmailListController < ApplicationController
       end
     end
 
-    redirect_to root_path
+    redirect_to root_url
   end
 
   private
