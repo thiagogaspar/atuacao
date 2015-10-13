@@ -6,9 +6,10 @@
   <thead>
     <tr>
       <th>Nome</th>
+      <th>Sobrenome</th>
       <th>Email</th>
       <th>Telefone primario</th>
-      <th>Telefone secundario</th>
+      <th>Organização / Area de atuação</th>
       <th>Inscrição manual</th>
       <th>Endereço</th>
       <th colspan="3"></th>
@@ -21,7 +22,7 @@
         <td><%= applicant.name %></td>
         <td><%= applicant.email %></td>
         <td><%= applicant.phone_1 %></td>
-        <td><%= applicant.phone_2 %></td>
+        <td><%= applicant.organization %></td>
         <td>
           <%= link_to "Inscrição manual", new_applicant_url(applicant.confirmation_token) %>
         </td>

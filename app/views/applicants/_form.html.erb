@@ -19,6 +19,10 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
+    <%= f.label :last_name, "Sobrenome*" %><br />
+    <%= f.text_field :last_name %>
+  </div>
+  <div class="field">
     <%= f.label :email, "E-mail*" %><br />
     <%= f.email_field :email %>
   </div>
@@ -27,8 +31,8 @@
     <%= f.text_field :phone_1 %>
   </div>
   <div class="field">
-    <%= f.label :phone_2, "Telefone secundario" %><br />
-    <%= f.text_field :phone_2 %>
+    <%= f.label :organization, "Organização / Area de atuação" %><br />
+    <%= f.text_field :organization %>
   </div>
   <div class="field">
     <%= f.label :address, "Endereço*" %><br />
