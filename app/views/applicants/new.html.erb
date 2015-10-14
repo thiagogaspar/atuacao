@@ -1,7 +1,15 @@
-<h1>Inscrição de participante</h1>
+<%= content_for(:title, "Cadastro - Semana da Democracia") %>
 
-<%= render 'form'%>
+<div class="wrap">
+  <div class="h1-inscricao">
+    <h1>Para confirmar sua presença preencha os dados abaixo:</h1>
+  </div>
 
-<% if current_user %>
-  <%= link_to 'Voltar', applicants_path %>
-<% end %>
+  <%= render 'form'%>
+
+  <% if current_user %>
+    <%= link_to 'Voltar', applicants_path %>
+  <% end %>
+  
+  <%= image_tag "url.png", class: "footer_img" %>
+</div>

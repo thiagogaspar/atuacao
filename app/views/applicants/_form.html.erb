@@ -27,7 +27,7 @@
     <%= f.email_field :email %>
   </div>
   <div class="field">
-    <%= f.label :phone_1, "Telefone primario*" %><br />
+    <%= f.label :phone_1, "Telefone*" %><br />
     <%= f.text_field :phone_1 %>
   </div>
   <div class="field">
@@ -38,13 +38,23 @@
     <%= f.label :address, "Endereço*" %><br />
     <%= f.text_field :address %>
   </div>
+  
   <% if request.params[:action] == "new" %>
-    <div class="field">
-      <%= f.label :confirm, "Arquivo de confirmação*" %><br />
+    <div class="field padding">
+      <label>Anexo do documento de confirmação: <p>Pedimos esse documento, pois 
+      as vagas do evento são limitadas. Ex.: Print da passagem para Curitiba, 
+      ou sua reserva de hotel.</p>
+      <br /> 
+        
+      <%= f.label :confirm, "Arquivo de confirmação*", id: "arquivo-btn" %><br />
       <%= f.file_field :confirm %>
     </div>
   <% end %>
+  
+  <h5>* Campo obrigatório.</h5>
+  
   <div class="actions">
-    <%= f.submit "Inscrever-me" %>
+    <%= f.submit "Enviar >", id: "enviar-btn" %>
   </div>
+
 <% end %>
