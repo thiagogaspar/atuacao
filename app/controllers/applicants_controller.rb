@@ -34,7 +34,7 @@ class ApplicantsController < ApplicationController
       @applicant.update_attribute(:expired, true)
       redirect_to @applicant, notice: 'Você foi cadastrado com sucesso.'
     else
-      render :edit
+      render :new
     end
   end
 
