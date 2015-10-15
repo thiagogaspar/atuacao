@@ -1,6 +1,18 @@
-<h1>Editar cadastro de participante</h1>
+<%= content_for(:title, "Cadastro - Semana da Democracia") %>
 
-<%= render 'form' %>
+<div class="wrap">
+  <div class="h1-inscricao">
+    <h1>Para confirmar sua presença preencha os dados abaixo:</h1>
+  </div>
+
+  <%= render 'form'%>
+
+  <% if current_user %>
+    <%= link_to 'Voltar', applicants_path %>
+  <% end %>
+  
+  <%= image_tag "url.png", class: "footer_img" %>
+</div>
 
 <%= link_to 'Exibir', @applicant %> 
 <% if current_user %>

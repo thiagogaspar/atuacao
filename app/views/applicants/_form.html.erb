@@ -1,14 +1,6 @@
-<%= form_for(@applicant) do |f| %>
-  <% if @applicant.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@applicant.errors.count, "error") %> prohibited this applicant from being saved:</h2>
-
-      <ul>
-      <% @applicant.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
+<%= form_for(@applicant, url: @url, method: @method, authenticity_token: true) do |f| %>
+  <% if flash[:error] %>
+    <div class="error"><%= flash[:error] %></div>
   <% end %>
 
   <small>Os campos marcados com * são de preenchimente obrigatório</small>
@@ -38,18 +30,16 @@
     <%= f.label :address, "Endereço*" %><br />
     <%= f.text_field :address %>
   </div>
-  
-  <% if request.params[:action] == "new" %>
-    <div class="field padding">
-      <label>Anexo do documento de confirmação: <p>Pedimos esse documento, pois 
-      as vagas do evento são limitadas. Ex.: Print da passagem para Curitiba, 
-      ou sua reserva de hotel.</p>
-      <br /> 
-        
-      <%= f.label :confirm, "Arquivo de confirmação*", id: "arquivo-btn" %><br />
-      <%= f.file_field :confirm %>
-    </div>
-  <% end %>
+ 
+  <div class="field padding">
+    <label>Anexo do documento de confirmação: <p>Pedimos esse documento, pois 
+    as vagas do evento são limitadas. Ex.: Print da passagem para Curitiba, 
+    ou sua reserva de hotel.</p>
+    <br /> 
+      
+    <%= f.label :confirm, "Arquivo de confirmação*", id: "arquivo-btn" %><br />
+    <%= f.file_field :confirm %>
+  </div>
   
   <h5>* Campo obrigatório.</h5>
   
