@@ -10,6 +10,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'therubyracer', platforms: :ruby
 gem 'bcrypt'
+gem 'foundation-rails'
 
 group :development, :test do
   gem 'web-console', '~> 2.0'
@@ -18,4 +19,3 @@ group :development, :test do
 end
 
 gem 'sqlite3', group: :test
-
